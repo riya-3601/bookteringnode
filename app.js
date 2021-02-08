@@ -16,6 +16,11 @@ var bookforsaleRouter=require('./routes/BOOKFORSALERoute');
 var customerRouter=require('./routes/CUSTOMERRoute');
 var addressbookRouter=require('./routes/ADDRESSBOOKRoute');
 var orderRouter=require('./routes/ORDERRoute');
+var bookforbarterRouter=require('./routes/bookforbarterRoutes');
+var bookreviewRouter=require('./routes/bookreviewRoutes');
+var employeedeliveryRouter=require('./routes/employeedeliveryRoutes');
+var employeeRouter=require('./routes/employeeRoutes');
+var orderdetailsRouter=require('./routes/orderdetailsRoutes');
 var app = express();
 
 // view engine setup
@@ -40,6 +45,12 @@ app.use('/bookforsale',bookforsaleRouter);
 app.use('/customer',customerRouter);
 app.use('/addressbook',addressbookRouter);
 app.use('/order',orderRouter);
+app.use('/bookforbarter',bookforbarterRouter);
+app.use('/bookreview',bookreviewRouter);
+app.use('/employeedelivery',employeedeliveryRouter);
+app.use('/employee',employeeRouter);
+app.use('/orderdetails',orderdetailsRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

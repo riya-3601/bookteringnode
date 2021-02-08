@@ -1,0 +1,25 @@
+var db=require('../dbconnection1');
+var employeedelivery={
+
+    getAllemployeedelivery:function(callback) {
+        return db.query('select * from employeedelivery_tbl',callback);
+    },
+
+    getemployeedeliveryById:function(id,callback){
+        return db.query('select * from employeedelivery_tbl where delivery_id=?',[id],callback);
+    },
+
+    addemployeedelivery:function(data,callback){
+        return db.query('insert into employeedelivery_tbl values (?,?,?,?)',[null,data.delivery_status,data.fk_employee_id,data.fk_order_id],callback);
+    },
+
+    deleteemployeedelivery:function(id,callback){
+        return db.query('delete from employeedelivery_tbl where delivery_id=?',[id],callback);
+    },
+
+    updateemployeedelivery:function(data,callback){
+        return db.query('update employeedelivery_tbl set delivery_status=?,fk_employee_id=?,fk_order_id=? where delivery_id=?',[data.delivery_status,data.fk_employee_id,data.fk_order_id,data.delivery_id],callback);
+    }
+
+};
+module.exports=employeedelivery;
