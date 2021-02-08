@@ -1,0 +1,60 @@
+var express=require('express');
+var router=express.Router();
+var bfs=require('../models1/bookforsale_model');
+router.get('/',function(req,res,next){
+    bfs.getAllBooks
+    (function(err,rows){
+
+        if(err){
+            res.json(err);
+        }
+        else{
+            res.json(rows);
+        }
+    });
+});
+router.get('/:id',function(req,res,next){
+    bfs.getBookforsalebyID(req.params.id,function(err,rows){
+        if(err){
+            res.json(err);
+        }
+        else{
+            res.json(rows);  
+         }
+    });
+});
+//localhost:3000/category
+router.post('/',function(req,res,next){
+    bfs.addBookforsale(req.body,function(err,rows){
+        if(err){
+            res.json(err);
+        }
+        else{
+            res.json(rows);
+        }
+    });
+});
+//localhost:3000/category/1
+router.delete('/:id',function(req,res,next){
+    bfs.deleteBookforsale(req.params.id,function(err,rows){
+        if(err){
+            res.json(err);
+        }
+        else{
+            res.json(rows);
+        }
+    });
+});
+//localhost:3000/category
+router.put('/',function(req,res,next){
+    bfs.editBookforsale(req.body,function(err,rows){
+        if(err){
+            res.json(err);
+        }
+        else{
+            res.json(rows);
+        }
+    });
+});
+
+module.exports=router;

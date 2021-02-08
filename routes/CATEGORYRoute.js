@@ -1,0 +1,61 @@
+var express=require('express');
+var router=express.Router();
+var cat1=require('../models1/categoryModel');
+//localhost:3000/category
+router.get('/',function(req,res,next){
+
+    cat1.getAllCategories(function(err,rows){
+
+        if(err){
+            res.json(err);
+        }
+        else{
+            res.json(rows);
+        }
+    });
+});
+//localhost:3000/category/1
+router.get('/:id',function(req,res,next){
+    cat1.getCategoryById(req.params.id,function(err,rows){
+        if(err){
+            res.json(err);
+        }
+        else{
+            res.json(rows);  
+         }
+    });
+});
+//localhost:3000/category
+router.post('/',function(req,res,next){
+    cat1.addCategory(req.body,function(err,rows){
+        if(err){
+            res.json(err);
+        }
+        else{
+            res.json(rows);
+        }
+    });
+});
+//localhost:3000/category/1
+router.delete('/:id',function(req,res,next){
+    cat1.deleteCategory(req.params.id,function(err,rows){
+        if(err){
+            res.json(err);
+        }
+        else{
+            res.json(rows);
+        }
+    });
+});
+//localhost:3000/category
+router.put('/',function(req,res,next){
+    cat1.editCategory(req.body,function(err,rows){
+        if(err){
+            res.json(err);
+        }
+        else{
+            res.json(rows);
+        }
+    });
+});
+module.exports=router;
