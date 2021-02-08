@@ -1,9 +1,11 @@
-var mysql=require('mysql');
-var connection=mysql.createPool({
+//aa code khoto che..
 
-    user:'root',
-    password:'',
-    database:'_booktering',
-    host:'localhost'
+var mysql = require('mysql');
+var connection = mysql.createPool({
+
+    user: 'root',
+    password: '',
+    database: '_booktering',
+    host: 'localhost'
 });
-module.exports=connection;
+module.exports = connection;
