@@ -11,7 +11,7 @@ var employeedelivery={
 
     addemployeedelivery:function(data,callback){
         return db.query('insert into employeedelivery_tbl values (?,?,?,?)',[null,data.delivery_status,data.fk_employee_id,data.fk_order_id],callback);
-    },
+    }, 
 
     deleteemployeedelivery:function(id,callback){
         return db.query('delete from employeedelivery_tbl where delivery_id=?',[id],callback);
