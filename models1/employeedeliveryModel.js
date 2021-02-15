@@ -2,7 +2,8 @@ var db=require('../dbconnection1');
 var employeedelivery={
 
     getAllemployeedelivery:function(callback) {
-        return db.query('select * from employeedelivery_tbl',callback);
+      //  return db.query('select * from employeedelivery_tbl',callback);
+      return db.query('select e.*,o.*,ed.* from employee_tbl e,order_tbl o,employeedelivery_tbl ed where e.employee_id=ed.fk_employee_id and o.order_id=ed.fk_order_id ',callback);
     },
 
     getemployeedeliveryById:function(id,callback){

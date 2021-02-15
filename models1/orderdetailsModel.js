@@ -2,7 +2,8 @@ var db=require('../dbconnection1');
 var orderdetails={
 
     getAllorderdetails:function(callback) {
-        return db.query('select * from orderdetails_tbl',callback);
+        //return db.query('select * from orderdetails_tbl',callback);
+        return db.query('select od.*,o.*,bs.* from orderdetails_tbl od,order_tbl o,bookforsale_tbl bs where o.order_id=od.fk_order_id and bs.book_id=od.fk_book_id',callback);
     },
 
     getorderdetailsById:function(id,callback){

@@ -2,7 +2,8 @@ var db=require('../dbconnection1');
 var bookreview={
 
     getAllbookreview:function(callback) {
-        return db.query('select * from bookreview_tbl',callback);
+    //    return db.query('select * from bookreview_tbl',callback);
+        return db.query('select br.*,bb.*,cust.*,cat.* from bookreview_tbl br,bookforbarter_tbl bb,customer_tbl cust,category_tbl cat where bb.bookbarter_id=br.fk_bookbarter_id and cust.customer_id=br.fk_customer_id and cat.category_id=br.fk_category_id',callback);
     },
 
     getbookreviewById:function(id,callback){

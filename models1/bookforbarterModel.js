@@ -2,7 +2,8 @@ var db=require('../dbconnection1');
 var bookbarter={
 
     getAllbookbarter:function(callback) {
-        return db.query('select * from bookforbarter_tbl',callback);
+      //  return db.query('select * from bookforbarter_tbl',callback);
+      return db.query('select bb.*,c.* from bookforbarter_tbl bb,customer_tbl c where c.customer_id=bb.fk_customer_id',callback);
     },
 
     getbookbarterById:function(id,callback){
