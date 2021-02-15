@@ -48,8 +48,18 @@ router.delete('/:id',function(req,res,next){
     });
 });
 //localhost:3000/order
-router.put('/',function(req,res,next){
+router.put('/:id',function(req,res,next){
     ord.editOrder(req.body,function(err,rows){
+        if(err){
+            res.json(err);
+        }
+        else{
+            res.json(rows);
+        }
+    });
+});
+router.get('/',function(req,res,next){
+    ord.getOrderbyCustomerId(req.body,function(err,rows){
         if(err){
             res.json(err);
         }
