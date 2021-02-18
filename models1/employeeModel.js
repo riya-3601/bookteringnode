@@ -20,6 +20,5 @@ var employee={
     updateemployee:function(data,callback){
         return db.query('update employee_tbl set employee_name=?,employee_mobileno=?,employee_password=? where employee_id=?',[data.employee_name,data.employee_mobileno,data.employee_password,data.employee_id],callback);
     }
-
 };
 module.exports=employee;
