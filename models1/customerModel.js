@@ -4,7 +4,7 @@ var customers={
         return db1.query('select * from customer_tbl',callback);
     },
     addCustomer:function(data,callback){
-        return db1.query('insert into customer_tbl values (?,?,?,?,?,?)',[null,data.customer_emailid,data.customer_password,data.customer_name,data.customer_gender,data.customer_mobileno],callback);
+        return db1.query('insert into customer_tbl values (?,?,?,?,?,?,?)',[null,data.customer_emailid,data.customer_password,data.customer_name,data.customer_gender,data.customer_mobileno,1],callback);
     },
     deleteCustomer:function(id,callback){
         return db1.query('delete from customer_tbl where customer_id=?',[id],callback);
@@ -14,6 +14,7 @@ var customers={
     },
     getCustomerById:function(id,callback){
         return db1.query('select * from customer_tbl where customer_id=?',[id],callback);
-    }
+    },
+   
 };
 module.exports=customers; 

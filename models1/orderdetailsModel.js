@@ -21,6 +21,11 @@ var orderdetails={
     updateorderdetails:function(data,callback){
         return db.query('update orderdetails_tbl set orderdetails_quantity=?,fk_order_id=?,fk_book_id=? where orderdetails_id=?',[data.orderdetails_quantity,data.fk_order_id,data.fk_book_id,data.orderdetails_id],callback);
     }
+    ,
+    getOrderDetailsByOrderId:function(order_id,callback){
+
+            return db.query('select od.*,o.*,b.* from orderdetails_tbl od,order_tbl o,bookforsale_tbl b where od.fk_order_id=o.order_id and od.fk_book_id=b.book_id and o.order_id=?',[order_id],callback);
+    }
 
 };
 module.exports=orderdetails;
