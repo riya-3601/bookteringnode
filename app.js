@@ -29,6 +29,7 @@ var orderdetailsRouter=require('./routes/orderdetailsRoutes');
 var orderdetailsbyorderidRouter=require('./routes/orderdetailsbyorderidRoute');
 var loginRouter=require('./routes/loginRoutes');
 var bookreviewbybookbarteridRouter=require('./routes/bookreviewbybookbarteridRoute');
+var getEmployeeDetailsRouter=require('./routes/getEmployeeDetailsRoutes');
 var app = express();
 
 // view engine setup
@@ -60,6 +61,7 @@ app.use('/employee',employeeRouter);
 app.use('/orderdetails',orderdetailsRouter);
 app.use('/orderdetailsbyorderid',orderdetailsbyorderidRouter);
 app.use('/bookreviewbybookbarterid',bookreviewbybookbarteridRouter);
+app.use('/getemployeeDetails',getEmployeeDetailsRouter);
 app.use('/login',loginRouter);
 
 // catch 404 and forward to error handler
