@@ -27,6 +27,7 @@ var employeedeliveryRouter=require('./routes/employeedeliveryRoutes');
 var employeeRouter=require('./routes/employeeRoutes');
 var orderdetailsRouter=require('./routes/orderdetailsRoutes');
 var orderdetailsbyorderidRouter=require('./routes/orderdetailsbyorderidRoute');
+var addressbycustomeridRouter=require('./routes/addressbycustomeridRoutes');
 var loginRouter=require('./routes/loginRoutes');
 var app = express();
 
@@ -58,6 +59,7 @@ app.use('/employeedelivery',employeedeliveryRouter);
 app.use('/employee',employeeRouter);
 app.use('/orderdetails',orderdetailsRouter);
 app.use('/orderdetailsbyorderid',orderdetailsbyorderidRouter);
+app.use('/addressbycustomerid',addressbycustomeridRouter);
 app.use('/login',loginRouter);
 
 // catch 404 and forward to error handler

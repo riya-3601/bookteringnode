@@ -14,6 +14,9 @@ var adb={
     },
     getAddressbookbyid:function(id,callback){
         return db.query('select a.*,c.* from addressbook_tbl a,customer_tbl c where c.customer_id=a.fk_customer_id and a.address_id=?',[data.address_id],callback);
+    },
+    getaddressbyCustomerid:function(customer_id,callback){
+        return db.query('select a.*,c.* from addressbook_tbl a,customer_tbl c where c.customer_id=a.fk_customer_id and c.customer_id=?'[data.customer_id],callback);
     }
 };
 module.exports=adb; 
