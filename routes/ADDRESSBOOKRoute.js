@@ -22,7 +22,7 @@ router.get('/:id',function(req,res,next){
         }
         else{
             res.json(rows);  
-         }
+         } 
     });
 });
 //localhost:3000/category
@@ -36,6 +36,9 @@ router.post('/',function(req,res,next){
         }
     });
 });
+
+
+
 //localhost:3000/category/1
 router.delete('/:id',function(req,res,next){
     address.deleteAddressbook(req.params.id,function(err,rows){
