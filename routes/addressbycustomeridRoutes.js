@@ -1,8 +1,9 @@
 var express=require('express');
 var router=express.Router();
-var orddet=require('../models1/addressbookModel');
-router.post('/',function(req,res,next){
-    address.getaddressbyCustomerid(req.body,function(err,rows){
+var address=require('../models1/addressbookModel');
+
+router.get('/:id',function(req,res,next){
+    address.getaddressbyCustomerid(req.params.id,function(err,rows){
         if(err){
             res.json(err);
         }
@@ -11,4 +12,4 @@ router.post('/',function(req,res,next){
         }
     });
 });
-module.exports=router;
+module.exports=router; 
