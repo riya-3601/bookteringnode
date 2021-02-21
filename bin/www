@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('backendpro:server');
+var debug = require('debug')('bookteringnode:server');
 var http = require('http');
 
 /**
