@@ -48,7 +48,7 @@ router.delete('/:id',function(req,res,next){
     });
 });
 //localhost:3000/order
-router.put('/:id',function(req,res,next){
+router.put('/',function(req,res,next){
     ord.editOrder(req.body,function(err,rows){
         if(err){
             res.json(err);
