@@ -14,4 +14,17 @@ router.get('/',function(req,res,next){
         }
     });
 });
+router.post('/',function(req,res,next){
+   
+    emp.addempDelivery(req.body,function(err,rows){
+        if(err)
+        {
+            res.json(err);
+        }
+        else
+        {
+            res.json(rows);
+        }
+    });
+});
 module.exports=router;

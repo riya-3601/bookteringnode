@@ -24,7 +24,8 @@ var employeedelivery={
     getEmployeeDeliveryByEmployeeId(employee_id,callback)
     {
         return db.query('select e.*,o.*,ed.*,a.*,c.* from employee_tbl e,order_tbl o,employeedelivery_tbl ed,addressbook_tbl a,customer_tbl c where o.order_id=ed.fk_order_id and e.employee_id=ed.fk_employee_id and c.customer_id=a.fk_customer_id and c.customer_id=o.fk_customer_id and e.employee_id=?',[employee_id],callback);
-    }
+    },
+    
 
 };
 module.exports=employeedelivery;
