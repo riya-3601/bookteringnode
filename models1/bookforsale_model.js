@@ -14,6 +14,9 @@ var bfs={
     },
     getBookforsalebyID:function(id,callback){
         return db.query('select b.*,c.* from bookforsale_tbl b,category_tbl c where c.category_id=b.fk_category_id and b.book_id=?',[data.book_id],callback);
+    },
+    getBookByCategoryID:function(id,callback){
+        return db.query('select b.*,c.* from bookforsale_tbl b,category_tbl c where c.category_id=b.fk_category_id and c.category_id=?',[data.category_id],callback);
     }
 }
 module.exports=bfs;
