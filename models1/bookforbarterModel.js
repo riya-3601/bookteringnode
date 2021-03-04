@@ -20,7 +20,11 @@ var bookbarter={
 
     updatebookbarter:function(data,callback){
         return db.query('update bookforbarter_tbl set bookbarter_title=?,bookbarter_author=?,bookbarter_status=?,bookbarter_price=?,fk_customer_id=? where bookbarter_id=?',[data.bookbarter_title,data.bookbarter_author,data.bookbarter_status,data.bookbarter_price,data.fk_customer_id,data.bookbarter_id],callback);
-    }
+    },
+    getbookbarterByIdCustomer:function(id,callback){
+        return db.query('select bb.*,c.* from bookforbarter_tbl bb,customer_tbl c where bb.bookbarter_id=? and c.customer_id=bb.fk_customer_id',[id],callback);
+    },
+    
 
 };
 module.exports=bookbarter;

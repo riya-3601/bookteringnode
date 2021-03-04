@@ -32,6 +32,8 @@ var loginRouter=require('./routes/loginRoutes');
 var bookreviewbybookbarteridRouter=require('./routes/bookreviewbybookbarteridRoute');
 var getEmployeeDeliveryByEmployeeIdRouter=require('./routes/getEmployeeDeliveryByEmployeeIdRoutes');
 var employeeassignRouter=require('./routes/employeeassignRoutes');
+var bookforbarterCustomerRouter=require('./routes/bookforbarterCustomerRoutes');
+
 var app = express();
 
 // view engine setup
@@ -66,6 +68,8 @@ app.use('/addressbycustomerid',addressbycustomeridRouter);
 app.use('/bookreviewbybookbarterid',bookreviewbybookbarteridRouter);
 app.use('/getEmployeeDeliveryByEmployeeId',getEmployeeDeliveryByEmployeeIdRouter);
 app.use('/employeeassign',employeeassignRouter);
+app.use('/bookforbarterCustomer',bookforbarterCustomerRouter);
+
 app.use('/login',loginRouter);
 
 // catch 404 and forward to error handler
