@@ -3,8 +3,8 @@ var bfs={
     getAllBooks:function(callback){
         return db.query('select b.*,c.* from bookforsale_tbl b,category_tbl c where c.category_id=b.fk_category_id',callback);
     },
-   addBookforsale:function(data,callback){
-        return db.query('insert into bookforsale_tbl values (?,?,?,?,?,?,?,?,?)',[null,data.book_isbn,data.book_title,data.book_author,data.book_price,data.book_publisher,data.book_ratings,data.book_image,data.fk_category_id],callback);
+   addBookforsale:function(data,filename,callback){
+        return db.query('insert into bookforsale_tbl values (?,?,?,?,?,?,?,?,?)',[null,data.book_isbn,data.book_title,data.book_author,data.book_price,data.book_publisher,data.book_ratings,filename,data.fk_category_id],callback);
     },
     deleteBookforsale:function(id,callback){
         return db.query('delete from bookforsale_tbl where book_id=?',[id],callback);
