@@ -28,7 +28,6 @@ var employee = {
         {
          return db.query("insert into employeedelivery_tbl Values (?,?,?,?)",[null,"Confirmed",emp,orders[i]],callback);
         }
-        
       }
 }
 module.exports=employee;
