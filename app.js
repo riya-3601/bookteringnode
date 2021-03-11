@@ -33,6 +33,7 @@ var bookreviewbybookbarteridRouter=require('./routes/bookreviewbybookbarteridRou
 var getEmployeeDeliveryByEmployeeIdRouter=require('./routes/getEmployeeDeliveryByEmployeeIdRoutes');
 var employeeassignRouter=require('./routes/employeeassignRoutes');
 var bookforbarterCustomerRouter=require('./routes/bookforbarterCustomerRoutes');
+var CustomerloginRouter=require('./routes/CustomerloginRoutes');
 
 var app = express();
 
@@ -69,7 +70,7 @@ app.use('/bookreviewbybookbarterid',bookreviewbybookbarteridRouter);
 app.use('/getEmployeeDeliveryByEmployeeId',getEmployeeDeliveryByEmployeeIdRouter);
 app.use('/employeeassign',employeeassignRouter);
 app.use('/bookforbarterCustomer',bookforbarterCustomerRouter);
-
+app.use('/customerlogin',CustomerloginRouter);
 app.use('/login',loginRouter);
 
 // catch 404 and forward to error handler
