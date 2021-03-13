@@ -36,6 +36,7 @@ var bookforbarterCustomerRouter=require('./routes/bookforbarterCustomerRoutes');
 var CustomerloginRouter=require('./routes/CustomerloginRoutes');
 var bookforsalebycatidRouter=require('./routes/bookforsalebycatidRoutes');
 var shelfcartincartRouter=require('./routes/shelfcartincartRoutes')
+var booksearchRouter=require('./routes/SearchBookforSaleRoutes')
 
 var app = express();
 
@@ -74,6 +75,7 @@ app.use('/employeeassign',employeeassignRouter);
 app.use('/bookforbarterCustomer',bookforbarterCustomerRouter);
 app.use('/customerlogin',CustomerloginRouter);
 app.use('/bookforsalebycatid',bookforsalebycatidRouter);
+app.use('/searchbook',booksearchRouter);
 app.use('/login',loginRouter);
 app.use('/shelfcartincart',shelfcartincartRouter);
 
