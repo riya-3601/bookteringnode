@@ -18,8 +18,17 @@ var bfs={
     getBookByCategoryID:function(id,callback){
         return db.query('select b.*,c.* from bookforsale_tbl b,category_tbl c where c.category_id=b.fk_category_id and c.category_id=?',[id],callback);
     },
-    searchBook:function(name,callback){
-        return db.query('select b.*,c.* from bookforsale_tbl b,category_tbl c where b.book_title=?,b.book_author=?,c.category_name=?'[name,name,name],callback);
-    }
+    searchBookbyBookISBN:function(search,callback){
+        return db.query('select b.*,c.* from bookforsale_tbl b,category_tbl c where c.category_id=b.fk_category_id and b.book_isbn=?',[search],callback);
+    },
+    searchBookbyBooktitle:function(search,callback){
+        return db.query('select b.*,c.* from bookforsale_tbl b,category_tbl c where  c.category_id=b.fk_category_id and b.book_title=?',[search],callback);
+    },
+    searchBookbyBookAuthor:function(search,callback){
+        return db.query('select b.*,c.* from bookforsale_tbl b,category_tbl c where c.category_id=b.fk_category_id and b.book_author=?',[search],callback);
+    },
+    searchBookbyBookpublisher:function(search,callback){
+        return db.query('select b.*,c.* from bookforsale_tbl b,category_tbl c where c.category_id=b.fk_category_id and b.book_publisher=?',[search],callback);
+    },
 }
 module.exports=bfs;
