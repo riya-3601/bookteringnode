@@ -34,6 +34,7 @@ var getEmployeeDeliveryByEmployeeIdRouter=require('./routes/getEmployeeDeliveryB
 var employeeassignRouter=require('./routes/employeeassignRoutes');
 var bookforbarterCustomerRouter=require('./routes/bookforbarterCustomerRoutes');
 var CustomerloginRouter=require('./routes/CustomerloginRoutes');
+var bookforsalebycatidRouter=require('./routes/bookforsalebycatidRoutes');
 
 var app = express();
 
@@ -71,6 +72,7 @@ app.use('/getEmployeeDeliveryByEmployeeId',getEmployeeDeliveryByEmployeeIdRouter
 app.use('/employeeassign',employeeassignRouter);
 app.use('/bookforbarterCustomer',bookforbarterCustomerRouter);
 app.use('/customerlogin',CustomerloginRouter);
+app.use('/bookforsalebycatid',bookforsalebycatidRouter);
 app.use('/login',loginRouter);
 
 // catch 404 and forward to error handler
