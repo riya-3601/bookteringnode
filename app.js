@@ -35,8 +35,9 @@ var employeeassignRouter=require('./routes/employeeassignRoutes');
 var bookforbarterCustomerRouter=require('./routes/bookforbarterCustomerRoutes');
 var CustomerloginRouter=require('./routes/CustomerloginRoutes');
 var bookforsalebycatidRouter=require('./routes/bookforsalebycatidRoutes');
-var shelfcartincartRouter=require('./routes/shelfcartincartRoutes')
-var booksearchRouter=require('./routes/SearchBookforSaleRoutes')
+var shelfcartincartRouter=require('./routes/shelfcartincartRoutes');
+var shelfcartinshelfRouter=require('./routes/shelfcartinshelfRoutes');
+var booksearchRouter=require('./routes/SearchBookforSaleRoutes');
 
 var app = express();
 
@@ -78,6 +79,7 @@ app.use('/bookforsalebycatid',bookforsalebycatidRouter);
 app.use('/searchbook',booksearchRouter);
 app.use('/login',loginRouter);
 app.use('/shelfcartincart',shelfcartincartRouter);
+app.use('/shelfcartinshelf',shelfcartinshelfRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
