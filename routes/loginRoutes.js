@@ -4,7 +4,7 @@ var log=require('../models1/loginModel');
 
 
 router.post('/',function(req,res,next){
-    log.addadmin(req.body,function(err,rows){
+    log.checkadminuser(req.body,function(err,rows){
         if(err){
             res.json(err);
         }

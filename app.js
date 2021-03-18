@@ -33,7 +33,7 @@ var bookreviewbybookbarteridRouter=require('./routes/bookreviewbybookbarteridRou
 var getEmployeeDeliveryByEmployeeIdRouter=require('./routes/getEmployeeDeliveryByEmployeeIdRoutes');
 var employeeassignRouter=require('./routes/employeeassignRoutes');
 var bookforbarterCustomerRouter=require('./routes/bookforbarterCustomerRoutes');
-var CustomerloginRouter=require('./routes/CustomerloginRoutes');
+
 var bookforsalebycatidRouter=require('./routes/bookforsalebycatidRoutes');
 var shelfcartincartRouter=require('./routes/shelfcartincartRoutes');
 var shelfcartinshelfRouter=require('./routes/shelfcartinshelfRoutes');
@@ -74,7 +74,7 @@ app.use('/bookreviewbybookbarterid',bookreviewbybookbarteridRouter);
 app.use('/getEmployeeDeliveryByEmployeeId',getEmployeeDeliveryByEmployeeIdRouter);
 app.use('/employeeassign',employeeassignRouter);
 app.use('/bookforbarterCustomer',bookforbarterCustomerRouter);
-app.use('/customerlogin',CustomerloginRouter);
+
 app.use('/bookforsalebycatid',bookforsalebycatidRouter);
 app.use('/searchbook',booksearchRouter);
 app.use('/login',loginRouter);
