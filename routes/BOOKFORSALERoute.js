@@ -54,6 +54,23 @@ router.put('/',upload.single('book_image'),function(req,res,next){
     });
 });
 
+//putmethod for editbook without file
+
+router.put('/:id',function(req,res,next){
+
+    console.log(req.body);
+    bfs.editBookforsalewithoutfile(req.body,function(err,rows){
+        if(err){
+            res.json(err);
+        }
+        else{
+            res.json(rows);
+        }
+    });
+});
+
+
+
 router.get('/',function(req,res,next){
     bfs.getAllBooks
     (function(err,rows){
