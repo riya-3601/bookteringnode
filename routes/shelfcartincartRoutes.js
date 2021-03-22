@@ -2,9 +2,9 @@ var express=require('express');
 var router=express.Router();
 var sc=require('../models1/shelfcartModel');
 
-router.get('/',function(req,res,next){
+router.get('/:id',function(req,res,next){
     sc.getcart
-    (function(err,rows){
+    (req.params.id,function(err,rows){
 
         if(err){
             res.json(err);
@@ -15,8 +15,8 @@ router.get('/',function(req,res,next){
     });
 });
 
-router.post('/:input',function(req,res,next){
-    sc.addincart(req.body,req.params.input,function(err,rows){
+router.post('/:id/:input',function(req,res,next){
+    sc.addincart(req.body,req.params.id,req.params.input,function(err,rows){
         if(err){
             res.json(err);
         }

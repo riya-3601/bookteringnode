@@ -2,9 +2,9 @@ var express=require('express');
 var router=express.Router();
 var sc1=require('../models1/shelfcartModel');
 
-router.get('/',function(req,res,next){
+router.get('/:id',function(req,res,next){
     sc1.getshelf
-    (function(err,rows){
+    (req.params.id,function(err,rows){
 
         if(err){
             res.json(err);
@@ -17,8 +17,19 @@ router.get('/',function(req,res,next){
 
 
 
-router.post('/',function(req,res,next){
-    sc1.addinshelf(req.body,function(err,rows){
+router.post('/:id',function(req,res,next){
+    sc1.addinshelf(req.body,req.params.id,function(err,rows){
+        if(err){
+            res.json(err);
+        }
+        else{
+            res.json(rows);
+        }
+    });
+});
+
+router.put('/',function(req,res,next){
+    sc1.onAddCartfromShelf(req.body,function(err,rows){
         if(err){
             res.json(err);
         }
