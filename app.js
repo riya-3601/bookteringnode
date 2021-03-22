@@ -38,6 +38,7 @@ var bookforsalebycatidRouter=require('./routes/bookforsalebycatidRoutes');
 var shelfcartincartRouter=require('./routes/shelfcartincartRoutes');
 var shelfcartinshelfRouter=require('./routes/shelfcartinshelfRoutes');
 var booksearchRouter=require('./routes/SearchBookforSaleRoutes');
+var mybooksRouter=require('./routes/mybooksRoutes');
 
 var app = express();
 
@@ -74,7 +75,7 @@ app.use('/bookreviewbybookbarterid',bookreviewbybookbarteridRouter);
 app.use('/getEmployeeDeliveryByEmployeeId',getEmployeeDeliveryByEmployeeIdRouter);
 app.use('/employeeassign',employeeassignRouter);
 app.use('/bookforbarterCustomer',bookforbarterCustomerRouter);
-
+app.use('/mybooks',mybooksRouter);
 app.use('/bookforsalebycatid',bookforsalebycatidRouter);
 app.use('/searchbook',booksearchRouter);
 app.use('/login',loginRouter);

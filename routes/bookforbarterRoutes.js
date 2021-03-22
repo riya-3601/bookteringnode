@@ -43,18 +43,18 @@ router.get('/:id',function(req,res,next){
         }
     });
 });
-router.get('/:name',function(req,res,next){
-    bookbart.getbookbarterById(req.params.id,function(err,rows){
-        if(err)
-        {
-            res.json(err);
-        }
-        else
-        {
-            res.json(rows);
-        }
-    });
-});
+// router.get('/:name',function(req,res,next){
+//     bookbart.getbookbarterById(req.params.id,function(err,rows){
+//         if(err)
+//         {
+//             res.json(err);
+//         }
+//         else
+//         {
+//             res.json(rows);
+//         }
+//     });
+// });
 
 router.post('/',bookforbarter.single('bookbarter_image'),function(req,res,next){
     bookbart.addbookbarter(req.body,req.file.filename,function(err,rows){

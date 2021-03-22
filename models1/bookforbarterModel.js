@@ -24,8 +24,9 @@ var bookbarter={
     getbookbarterByIdCustomer:function(id,callback){
         return db.query('select bb.*,c.* from bookforbarter_tbl bb,customer_tbl c where bb.bookbarter_id=? and c.customer_id=bb.fk_customer_id',[id],callback);
     },
-    searchbookbarter:function(name,callback){
-        return db.query();
+    getbookforbarterBycustomerid:function(id,callback){
+        return db.query('select * from bookforbarter_tbl where fk_customer_id=?',[id],callback);
+
     }
 };
 module.exports=bookbarter;
