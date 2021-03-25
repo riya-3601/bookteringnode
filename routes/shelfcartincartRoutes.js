@@ -25,4 +25,16 @@ router.post('/:id/:input',function(req,res,next){
         }
     });
 });
+router.delete('/:id',function(req,res,next){
+    sc.deleteFromCart(req.params.id,function(err,rows){
+        if(err)
+        {
+            res.json(err);
+        }
+        else
+        {
+            res.json(rows);
+        }
+    });
+});
 module.exports=router;
