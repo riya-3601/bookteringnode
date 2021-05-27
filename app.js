@@ -38,8 +38,16 @@ var bookforsalebycatidRouter=require('./routes/bookforsalebycatidRoutes');
 var shelfcartincartRouter=require('./routes/shelfcartincartRoutes');
 var shelfcartinshelfRouter=require('./routes/shelfcartinshelfRoutes');
 var booksearchRouter=require('./routes/SearchBookforSaleRoutes');
+var bookforbartersearchRouter=require('./routes/SearchBookforbarterRoutes');
 var mybooksRouter=require('./routes/mybooksRoutes');
-
+var getbookforbarterfordisplaycustRouter=require('./routes/getbookforbarterfordisplaycustRoutes');
+var multipleinsertinorderdetRouter=require('./routes/multipleaddorderdetailsRoutes');
+var contactusRouter=require('./routes/contactusRoutes');
+var MyOrdersCustomerRouter=require('./routes/myOrdersonCustomerRoutes');
+var getBookreviewByCustomerrIdRouter=require('./routes/getBookReviewByCustomerIdRoutes');
+var editOrderDeliveredRouter=require('./routes/editOrderDeliveredRoutes');
+var passwordmailRouter=require('./routes/passwordmailRoutes');
+var sample=require('./routes/sampleroutes');
 var app = express();
 
 // view engine setup
@@ -59,6 +67,8 @@ app.use('/users', usersRouter);
 //app.use('/student',studRouter);
 //app.use('/customer',custRouter);
 //app.use('/order',ordRouter);
+
+app.use('/sample',sample);
 app.use('/category',categoryRouter);
 app.use('/bookforsale',bookforsaleRouter);
 app.use('/customer',customerRouter);
@@ -69,18 +79,26 @@ app.use('/bookreview',bookreviewRouter);
 app.use('/employeedelivery',employeedeliveryRouter);
 app.use('/employee',employeeRouter);
 app.use('/orderdetails',orderdetailsRouter);
+app.use('/multipleorderdetails',multipleinsertinorderdetRouter);
 app.use('/orderdetailsbyorderid',orderdetailsbyorderidRouter);
 app.use('/addressbycustomerid',addressbycustomeridRouter);
 app.use('/bookreviewbybookbarterid',bookreviewbybookbarteridRouter);
 app.use('/getEmployeeDeliveryByEmployeeId',getEmployeeDeliveryByEmployeeIdRouter);
 app.use('/employeeassign',employeeassignRouter);
 app.use('/bookforbarterCustomer',bookforbarterCustomerRouter);
+app.use('/getbookforbarterfordisplaycust',getbookforbarterfordisplaycustRouter);
+app.use('/myorders',MyOrdersCustomerRouter);
 app.use('/mybooks',mybooksRouter);
 app.use('/bookforsalebycatid',bookforsalebycatidRouter);
 app.use('/searchbook',booksearchRouter);
+app.use('/searchbookforbarter',bookforbartersearchRouter);
 app.use('/login',loginRouter);
 app.use('/shelfcartincart',shelfcartincartRouter);
 app.use('/shelfcartinshelf',shelfcartinshelfRouter);
+app.use('/contactus',contactusRouter);
+app.use('/editOrderDelivered',editOrderDeliveredRouter);
+app.use('/getBookreviewByCustomerrId',getBookreviewByCustomerrIdRouter);
+app.use('/passwordmail',passwordmailRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

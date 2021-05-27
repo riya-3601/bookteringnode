@@ -9,6 +9,7 @@ var shelfcart={
     
 
     addincart:function(data,id,input,callback){
+        console.log(input);
         return db.query('insert into shelfcart_tbl values (?,?,?,?,?)',[null,input,'in cart',data.book_id,id],callback);
     },
     addinshelf:function(data,id,callback){
@@ -19,8 +20,22 @@ var shelfcart={
     },
     deleteFromCart:function(id,callback){
         return db.query('delete from shelfcart_tbl where shelfcart_id=?',[id],callback);
+    },
+    deleteFromShelf:function(id,callback){
+        return db.query('delete from shelfcart_tbl where shelfcart_id=?',[id],callback);
+    },
+    multipledeleteFromCart:function(data,callback){
+        //console.log('from multiple delete',data);
+        var delarr=[];
+        for(i=0;i<data.length;i++){
+         
+        delarr[i]=data[i].shelfcart_id;
+        }
+        //console.log('Values:',delarr)
+         return db.query("delete from shelfcart_tbl where shelfcart_id in (?)",[delarr],callback);
+    },
+    getcartByCartid:function(book_id,customer_id,callback){
+        return db.query('select * from shelfcart_tbl where fk_book_id=? and fk_customer_id=? and shelfcart_status="in cart"',[book_id,customer_id],callback);
     }
-    
-
 }
 module.exports=shelfcart;

@@ -30,7 +30,7 @@ var upload = multer({storage: storage});
 
 
 router.post('/',upload.single('book_image'),function(req,res,next){
-    //console.log(req.file);
+    console.log(req.file);
     bfs.addBookforsale(req.body,req.file.filename,function(err,rows){
         if(err){
             res.json(err);

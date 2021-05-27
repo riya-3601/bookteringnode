@@ -23,7 +23,7 @@ var employeedelivery={
     },
     getEmployeeDeliveryByEmployeeId(employee_id,callback)
     {
-        return db.query('select e.*,o.*,ed.*,a.*,c.* from employee_tbl e,order_tbl o,employeedelivery_tbl ed,addressbook_tbl a,customer_tbl c where o.order_id=ed.fk_order_id and e.employee_id=ed.fk_employee_id and c.customer_id=a.fk_customer_id and c.customer_id=o.fk_customer_id and e.employee_id=?',[employee_id],callback);
+        return db.query('select e.*,o.*,ed.*,c.*,a.* from employee_tbl e,order_tbl o,employeedelivery_tbl ed,customer_tbl c,addressbook_tbl a where o.order_id=ed.fk_order_id and e.employee_id=ed.fk_employee_id and c.customer_id=o.fk_customer_id and a.address_id=o.fk_address_id and e.employee_id=? and ed.delivery_status!=?',[employee_id,'Delivered'],callback);
     },
     
 
